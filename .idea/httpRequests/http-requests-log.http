@@ -1,0 +1,16 @@
+GET http://localhost:8000/api/user
+
+<> 2021-01-09T164054.500.html
+
+###
+
+GET http://localhost:8000/api/user
+
+<> 2021-01-09T163830.500.html
+
+###
+
+GET http://api/user
+
+###
+
