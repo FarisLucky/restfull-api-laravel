@@ -8,6 +8,7 @@ use App\Http\Resources\AuthorsCollection;
 use App\Http\Resources\AuthorsResource;
 use App\Models\Author;
 use Illuminate\Support\Facades\DB;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class AuthorController extends Controller
 {
@@ -17,8 +18,8 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        $authors = Author::limit(3)->orderBy('name')->get();
-//        $authors = DB::table('authors')->limit(500)->get();
+        $authors = QueryBuilder::for(Author::class)->allowedSorts(['name'])->get();
+//        $authors = DB::table('authors')->orderBy('name')->get();
         return new AuthorsCollection($authors);
     }
 
@@ -45,6 +46,8 @@ class AuthorController extends Controller
             ->header('Location',route('authors.show',[
                 'author' => $author
             ]));
+
+
     }
 
     /**

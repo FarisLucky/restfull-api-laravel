@@ -2,8 +2,10 @@
 
 namespace App\Exceptions;
 
+use Couchbase\Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Contracts\Support\Responsable;
+use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Response;
@@ -11,6 +13,7 @@ use Illuminate\Routing\Router;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -89,5 +92,13 @@ class Handler extends ExceptionHandler
         }
 
         return redirect()->guest($exception->redirectTo() ?? route('login'));
+    }
+
+    public function render($request, Throwable $e)
+    {
+        if ($e instanceof QueryException) {
+            $e = new NotFoundHttpException('Resource Not Found');
+        }
+        return parent::render($request, $e);
     }
 }

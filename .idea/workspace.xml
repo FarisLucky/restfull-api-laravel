@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e7898cf-7baf-4110-8639-19e189a9cffb" name="Default Changelist" comment="" />
+    <list default="true" id="9e7898cf-7baf-4110-8639-19e189a9cffb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/restfull-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/restfull-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/SetupDenEnvironment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/SetupDenEnvironment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/AuthorsCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/AuthorsCollection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/AuthorsResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/AuthorsResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Author.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Author.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/AuthorsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/AuthorsTest.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +37,9 @@
         <option value="HTTP Request" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -142,9 +162,11 @@
       <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-query-builder" />
     </include_path>
   </component>
   <component name="ProjectId" id="1mon1HR44VQZa2EJT6Zeeq6VExc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -170,50 +192,50 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.AuthorsTest.it_can_sort_authors_by_name_in_descending_order_throught_a_sort_query_param">
-    <configuration name="AuthorsTest.it_can_sort_authors_by_name_in_descending_order_throught_a_sort_query_param" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+  <component name="RunManager" selected="PHPUnit.BooksRelationshipsTest.it_includes_related_resource_objects_when_an_include_query_param_is_given">
+    <configuration name="BooksRelationshipsTest.it_can_get_all_related_authors_as_resource_objects_from_related_link" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
           <option name="interpreterName" value="PHP 7.4" />
         </PhpTestInterpreterSettings>
       </CommandLine>
-      <TestRunner class="Tests\Feature\AuthorsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/AuthorsTest.php" method="it_can_sort_authors_by_name_in_descending_order_throught_a_sort_query_param" scope="Method" />
+      <TestRunner class="Tests\Feature\BooksRelationshipsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BooksRelationshipsTest.php" method="it_can_get_all_related_authors_as_resource_objects_from_related_link" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="AuthorsTest.it_insert_500_authors" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+    <configuration name="BooksRelationshipsTest.it_includes_related_resource_objects_when_an_include_query_param_is_given" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
           <option name="interpreterName" value="PHP 7.4" />
         </PhpTestInterpreterSettings>
       </CommandLine>
-      <TestRunner class="Tests\Feature\AuthorsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/AuthorsTest.php" method="it_insert_500_authors" scope="Method" />
+      <TestRunner class="Tests\Feature\BooksRelationshipsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BooksRelationshipsTest.php" method="it_includes_related_resource_objects_when_an_include_query_param_is_given" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="EnsureCorrectAPIHeadersTest.when_aborting_for_a_missing_accept_header_thw_correct_content_type_header_is" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+    <configuration name="BooksRelationshipsTest.it_validates_that_the_id_member_has_value_of_authors_when_updating_a_relationship" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
           <option name="interpreterName" value="PHP 7.4" />
         </PhpTestInterpreterSettings>
       </CommandLine>
-      <TestRunner class="Middleware\EnsureCorrectAPIHeadersTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/Middleware/EnsureCorrectAPIHeadersTest.php" method="when_aborting_for_a_missing_accept_header_thw_correct_content_type_header_is" scope="Method" />
+      <TestRunner class="Tests\Feature\BooksRelationshipsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BooksRelationshipsTest.php" method="it_validates_that_the_id_member_has_value_of_authors_when_updating_a_relationship" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="HandlerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+    <configuration name="BooksRelationshipsTest.it_validates_that_the_id_member_is_string_when_updating_a_relationship" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
           <option name="interpreterName" value="PHP 7.4" />
         </PhpTestInterpreterSettings>
       </CommandLine>
-      <TestRunner class="Tests\Unit\Exceptions\HandlerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/Exceptions/HandlerTest.php" scope="Class" />
+      <TestRunner class="Tests\Feature\BooksRelationshipsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BooksRelationshipsTest.php" method="it_validates_that_the_id_member_is_string_when_updating_a_relationship" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="HandlerTest.it_converts_an_exception_into_json_api_spec_error_response" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+    <configuration name="BooksRelationshipsTest.it_validates_that_the_type_member_is_given_when_updating_a_relationship" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
           <option name="interpreterName" value="PHP 7.4" />
         </PhpTestInterpreterSettings>
       </CommandLine>
-      <TestRunner class="Tests\Unit\Exceptions\HandlerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/Exceptions/HandlerTest.php" method="it_converts_an_exception_into_json_api_spec_error_response" scope="Method" />
+      <TestRunner class="Tests\Feature\BooksRelationshipsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BooksRelationshipsTest.php" method="it_validates_that_the_type_member_is_given_when_updating_a_relationship" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -227,19 +249,19 @@
     </configuration>
     <list>
       <item itemvalue="PHPUnit.phpunit.xml" />
-      <item itemvalue="PHPUnit.EnsureCorrectAPIHeadersTest.when_aborting_for_a_missing_accept_header_thw_correct_content_type_header_is" />
-      <item itemvalue="PHPUnit.HandlerTest.it_converts_an_exception_into_json_api_spec_error_response" />
-      <item itemvalue="PHPUnit.HandlerTest" />
-      <item itemvalue="PHPUnit.AuthorsTest.it_insert_500_authors" />
-      <item itemvalue="PHPUnit.AuthorsTest.it_can_sort_authors_by_name_in_descending_order_throught_a_sort_query_param" />
+      <item itemvalue="PHPUnit.BooksRelationshipsTest.it_validates_that_the_id_member_is_string_when_updating_a_relationship" />
+      <item itemvalue="PHPUnit.BooksRelationshipsTest.it_validates_that_the_type_member_is_given_when_updating_a_relationship" />
+      <item itemvalue="PHPUnit.BooksRelationshipsTest.it_validates_that_the_id_member_has_value_of_authors_when_updating_a_relationship" />
+      <item itemvalue="PHPUnit.BooksRelationshipsTest.it_can_get_all_related_authors_as_resource_objects_from_related_link" />
+      <item itemvalue="PHPUnit.BooksRelationshipsTest.it_includes_related_resource_objects_when_an_include_query_param_is_given" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.AuthorsTest.it_can_sort_authors_by_name_in_descending_order_throught_a_sort_query_param" />
-        <item itemvalue="PHPUnit.AuthorsTest.it_insert_500_authors" />
-        <item itemvalue="PHPUnit.HandlerTest.it_converts_an_exception_into_json_api_spec_error_response" />
-        <item itemvalue="PHPUnit.HandlerTest" />
-        <item itemvalue="PHPUnit.EnsureCorrectAPIHeadersTest.when_aborting_for_a_missing_accept_header_thw_correct_content_type_header_is" />
+        <item itemvalue="PHPUnit.BooksRelationshipsTest.it_includes_related_resource_objects_when_an_include_query_param_is_given" />
+        <item itemvalue="PHPUnit.BooksRelationshipsTest.it_can_get_all_related_authors_as_resource_objects_from_related_link" />
+        <item itemvalue="PHPUnit.BooksRelationshipsTest.it_validates_that_the_id_member_has_value_of_authors_when_updating_a_relationship" />
+        <item itemvalue="PHPUnit.BooksRelationshipsTest.it_validates_that_the_type_member_is_given_when_updating_a_relationship" />
+        <item itemvalue="PHPUnit.BooksRelationshipsTest.it_validates_that_the_id_member_is_string_when_updating_a_relationship" />
       </list>
     </recent_temporary>
   </component>
@@ -268,10 +290,29 @@
       <workItem from="1610766004032" duration="1336000" />
       <workItem from="1610768842151" duration="3984000" />
       <workItem from="1610791334404" duration="1994000" />
+      <workItem from="1610949758148" duration="668000" />
+      <workItem from="1610974816285" duration="598000" />
+      <workItem from="1611120514757" duration="574000" />
+      <workItem from="1611660669157" duration="6864000" />
+      <workItem from="1611717596306" duration="14529000" />
+      <workItem from="1611753761595" duration="6628000" />
+      <workItem from="1611760915823" duration="986000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

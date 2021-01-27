@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AuthorController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\BookAuthorsRelatedController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\BooksAuthorsRelationshipsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,12 +17,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')
+Route::middleware(['auth:api'])
     ->prefix('v1')
     ->group(function () {
-        Route::get('/user', function (Request $request) {
-            return $request->user();
-        });
 
+        /**
+         * Authors Route
+         * Routing ini digunakan untuk api dari Authors Controller
+         * @param AuthorController
+         */
         Route::apiResource('authors',AuthorController::class)->names('authors');
+
+        /**
+         * Books Route
+         * Routing ini digunakan untuk api dari Books Controller
+         * @param BookController
+         */
+        Route::apiResource('books',BookController::class)->names('books');
+
+        Route::get("books/{book}/authors", function (){
+            return true;
+        })->name("book.authors");
+
+        Route::get("books/{book}/relationships/authors", [BooksAuthorsRelationshipsController::class,"index"])
+        ->name("books.relationships.authors");
+
+        Route::match(["patch","put"],"books/{book}/relationships/authors",
+            [BooksAuthorsRelationshipsController::class, "update"])
+            ->name("books.relationships.authors");
+
+        Route::get('books/{book}/authors',[BookAuthorsRelatedController::class, "index"])
+            ->name("books.authors");
     });

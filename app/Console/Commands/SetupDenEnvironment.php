@@ -43,15 +43,27 @@ class SetupDenEnvironment extends Command
         $user = $this->createUser();
         $this->createPersonalAccessClient($user);
         $this->createPersonalAccessToken($user);
+        $this->createPasswordClient($user);
         $this->info("all DOne. Bye!");
     }
 
-    public function MigrateAndSeedDatabase() {
+    public function MigrateAndSeedDatabase()
+    {
         $this->call('migrate:fresh');
         $this->call('db:seed');
     }
 
-    public function createUser() {
+    public function createPersonalAccessToken($user)
+    {
+        $token = $user->createToken('Development Token');
+
+        $this->info('Personal Access Token created successfully');
+        $this->warn('Personal access Token: ');
+        $this->line($token->accessToken);
+    }
+
+    public function createUser()
+    {
         $this->info('Creating User For App');
         $user = User::create([
             'name' => 'salman',
@@ -64,7 +76,8 @@ class SetupDenEnvironment extends Command
         return $user;
     }
 
-    public function createPersonalAccessClient($user) {
+    public function createPersonalAccessClient($user)
+    {
         $this->call('passport:client', [
             '--personal' => true,
             '--name' => 'Personal Access Client',
@@ -72,11 +85,12 @@ class SetupDenEnvironment extends Command
         ]);
     }
 
-    public function createPersonalAccessToken($user) {
-        $token = $user->createToken('Development Token');
-
-        $this->info('Personal Access Token created successfully');
-        $this->warn('Personal access Token: ');
-        $this->line($token->accessToken);
+    public function createPasswordClient($user)
+    {
+        $this->call("passport:client",[
+            "--password" => true,
+            "--name" => "Personal Password Grant",
+            "--user_id" => $user->id
+        ]);
     }
 }

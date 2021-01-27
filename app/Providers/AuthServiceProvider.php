@@ -28,6 +28,9 @@ class AuthServiceProvider extends ServiceProvider
 
         Passport::routes();
 
+        /**
+         * ini digunakan untuk oauth password credential
+         */
         Passport::enableImplicitGrant();
     }
 }

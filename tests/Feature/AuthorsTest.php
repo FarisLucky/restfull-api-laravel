@@ -377,7 +377,7 @@ class AuthorsTest extends TestCase
             ]);
         });
 
-        $this->get('api/v1/authors/',[
+        $this->get('api/v1/authors/', [
             'accept' => 'application/vnd.api+json'
         ])->assertJson([
             "data" => [
@@ -386,20 +386,20 @@ class AuthorsTest extends TestCase
                     "type" => "authors",
                     "attributes" => [
                         'name' => $authors[2]->name,
-                        'created_at' => date("Y-m-d H:i:s",strtotime($authors[2]->created_at)),
-                        'updated_at' => date("Y-m-d H:i:s",strtotime($authors[2]->updated_at))
+                        'created_at' => date("Y-m-d H:i:s", strtotime($authors[2]->created_at)),
+                        'updated_at' => date("Y-m-d H:i:s", strtotime($authors[2]->updated_at))
                     ]
 
-                ],[
+                ], [
                     "id" => $authors[1]->id,
                     "type" => "authors",
                     "attributes" => [
                         'name' => $authors[1]->name,
-                        'created_at' =>  date("Y-m-d H:i:s",strtotime($authors[1]->created_at)),
-                        'updated_at' =>  date("Y-m-d H:i:s",strtotime($authors[1]->updated_at)),
+                        'created_at' => date("Y-m-d H:i:s", strtotime($authors[1]->created_at)),
+                        'updated_at' => date("Y-m-d H:i:s", strtotime($authors[1]->updated_at)),
                     ]
 
-                ],[
+                ], [
                     "id" => $authors[0]->id,
                     "type" => "authors",
                     "attributes" => [
@@ -409,6 +409,64 @@ class AuthorsTest extends TestCase
                     ]
 
                 ],
+            ]
+        ]);
+    }
+
+    /**
+     * Sort Testing
+     */
+
+    /**
+     * @test
+     */
+    public function it_can_sort_authors_by_name_through_a_sort_query_parameter()
+    {
+        $user = User::factory()->create();
+        Passport::actingAs($user);
+        $authors = collect([
+            'Salman',
+            'Anggi',
+            'Farid'
+        ])->map(function ($name) {
+            return Author::factory()->create([
+                'name' => $name
+            ]);
+        });
+
+        $this->get('/api/v1/authors?sort=name', [
+            'Accept' => 'application/vnd.api+json',
+            'Content-type' => 'application/vnd.api+json',
+        ])->assertStatus(200)->assertJson([
+            "data" => [
+                [
+                    "id" => $authors[1]->id,
+                    "type" => "authors",
+                    "attributes" => [
+                        'name' => $authors[1]->name,
+                        'created_at' => date("Y-m-d H:i:s", strtotime($authors[1]->created_at)),
+                        'updated_at' => date("Y-m-d H:i:s", strtotime($authors[1]->updated_at))
+                    ]
+
+                ], [
+                    "id" => $authors[2]->id,
+                    "type" => "authors",
+                    "attributes" => [
+                        'name' => $authors[2]->name,
+                        'created_at' => date("Y-m-d H:i:s", strtotime($authors[2]->created_at)),
+                        'updated_at' => date("Y-m-d H:i:s", strtotime($authors[2]->updated_at))
+                    ]
+
+                ], [
+                    "id" => $authors[0]->id,
+                    "type" => "authors",
+                    "attributes" => [
+                        'name' => $authors[0]->name,
+                        'created_at' => date("Y-m-d H:i:s", strtotime($authors[0]->created_at)),
+                        'updated_at' => date("Y-m-d H:i:s", strtotime($authors[0]->updated_at))
+                    ]
+
+                ]
             ]
         ]);
     }
