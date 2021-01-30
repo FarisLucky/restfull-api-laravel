@@ -15,7 +15,7 @@ use Tests\TestCase;
 
 class BooksTest extends TestCase
 {
-    use DatabaseMigrations;
+//    use DatabaseMigrations;
 
     /**
      * A basic feature test example.

@@ -5,22 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e7898cf-7baf-4110-8639-19e189a9cffb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/restfull-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/restfull-api.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/SetupDenEnvironment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/SetupDenEnvironment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/AuthorsCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/AuthorsCollection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookAuthorsRelatedController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookAuthorsRelatedController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BooksAuthorsRelationshipsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BooksAuthorsRelationshipsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Resources/AuthorsResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/AuthorsResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Author.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Author.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Book.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/AuthorsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/AuthorsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/BooksTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/BooksTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,9 +173,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="project.scopes" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Data Fariss\learn\PROJEK\restfull-api\app\Http\Controllers" />
+    </key>
   </component>
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
@@ -192,14 +198,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.BooksRelationshipsTest.it_includes_related_resource_objects_when_an_include_query_param_is_given">
-    <configuration name="BooksRelationshipsTest.it_can_get_all_related_authors_as_resource_objects_from_related_link" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+  <component name="RunManager" selected="PHPUnit.BooksRelationshipsTest.it_can_modify_relationships_to_authors_and_remove_relationships">
+    <configuration name="AuthorsTest.it_insert_500_authors" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
           <option name="interpreterName" value="PHP 7.4" />
         </PhpTestInterpreterSettings>
       </CommandLine>
-      <TestRunner class="Tests\Feature\BooksRelationshipsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BooksRelationshipsTest.php" method="it_can_get_all_related_authors_as_resource_objects_from_related_link" scope="Method" />
+      <TestRunner class="Tests\Feature\AuthorsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/AuthorsTest.php" method="it_insert_500_authors" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="BooksRelationshipsTest.it_can_modify_relationships_to_authors_and_remove_relationships" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.4" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\BooksRelationshipsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BooksRelationshipsTest.php" method="it_can_modify_relationships_to_authors_and_remove_relationships" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="BooksRelationshipsTest.it_includes_related_resource_objects_when_an_include_query_param_is_given" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -211,31 +226,22 @@
       <TestRunner class="Tests\Feature\BooksRelationshipsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BooksRelationshipsTest.php" method="it_includes_related_resource_objects_when_an_include_query_param_is_given" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="BooksRelationshipsTest.it_validates_that_the_id_member_has_value_of_authors_when_updating_a_relationship" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+    <configuration name="BooksTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
           <option name="interpreterName" value="PHP 7.4" />
         </PhpTestInterpreterSettings>
       </CommandLine>
-      <TestRunner class="Tests\Feature\BooksRelationshipsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BooksRelationshipsTest.php" method="it_validates_that_the_id_member_has_value_of_authors_when_updating_a_relationship" scope="Method" />
+      <TestRunner class="Tests\Feature\BooksTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BooksTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="BooksRelationshipsTest.it_validates_that_the_id_member_is_string_when_updating_a_relationship" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+    <configuration name="BooksTest.it_returns_an_book_as_resource_object" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
           <option name="interpreterName" value="PHP 7.4" />
         </PhpTestInterpreterSettings>
       </CommandLine>
-      <TestRunner class="Tests\Feature\BooksRelationshipsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BooksRelationshipsTest.php" method="it_validates_that_the_id_member_is_string_when_updating_a_relationship" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="BooksRelationshipsTest.it_validates_that_the_type_member_is_given_when_updating_a_relationship" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <CommandLine>
-        <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP 7.4" />
-        </PhpTestInterpreterSettings>
-      </CommandLine>
-      <TestRunner class="Tests\Feature\BooksRelationshipsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BooksRelationshipsTest.php" method="it_validates_that_the_type_member_is_given_when_updating_a_relationship" scope="Method" />
+      <TestRunner class="Tests\Feature\BooksTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/BooksTest.php" method="it_returns_an_book_as_resource_object" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -249,19 +255,19 @@
     </configuration>
     <list>
       <item itemvalue="PHPUnit.phpunit.xml" />
-      <item itemvalue="PHPUnit.BooksRelationshipsTest.it_validates_that_the_id_member_is_string_when_updating_a_relationship" />
-      <item itemvalue="PHPUnit.BooksRelationshipsTest.it_validates_that_the_type_member_is_given_when_updating_a_relationship" />
-      <item itemvalue="PHPUnit.BooksRelationshipsTest.it_validates_that_the_id_member_has_value_of_authors_when_updating_a_relationship" />
-      <item itemvalue="PHPUnit.BooksRelationshipsTest.it_can_get_all_related_authors_as_resource_objects_from_related_link" />
       <item itemvalue="PHPUnit.BooksRelationshipsTest.it_includes_related_resource_objects_when_an_include_query_param_is_given" />
+      <item itemvalue="PHPUnit.BooksTest" />
+      <item itemvalue="PHPUnit.AuthorsTest.it_insert_500_authors" />
+      <item itemvalue="PHPUnit.BooksTest.it_returns_an_book_as_resource_object" />
+      <item itemvalue="PHPUnit.BooksRelationshipsTest.it_can_modify_relationships_to_authors_and_remove_relationships" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.BooksRelationshipsTest.it_can_modify_relationships_to_authors_and_remove_relationships" />
+        <item itemvalue="PHPUnit.BooksTest.it_returns_an_book_as_resource_object" />
+        <item itemvalue="PHPUnit.AuthorsTest.it_insert_500_authors" />
+        <item itemvalue="PHPUnit.BooksTest" />
         <item itemvalue="PHPUnit.BooksRelationshipsTest.it_includes_related_resource_objects_when_an_include_query_param_is_given" />
-        <item itemvalue="PHPUnit.BooksRelationshipsTest.it_can_get_all_related_authors_as_resource_objects_from_related_link" />
-        <item itemvalue="PHPUnit.BooksRelationshipsTest.it_validates_that_the_id_member_has_value_of_authors_when_updating_a_relationship" />
-        <item itemvalue="PHPUnit.BooksRelationshipsTest.it_validates_that_the_type_member_is_given_when_updating_a_relationship" />
-        <item itemvalue="PHPUnit.BooksRelationshipsTest.it_validates_that_the_id_member_is_string_when_updating_a_relationship" />
       </list>
     </recent_temporary>
   </component>
@@ -296,7 +302,15 @@
       <workItem from="1611660669157" duration="6864000" />
       <workItem from="1611717596306" duration="14529000" />
       <workItem from="1611753761595" duration="6628000" />
-      <workItem from="1611760915823" duration="986000" />
+      <workItem from="1611760915823" duration="1577000" />
+      <workItem from="1611804890755" duration="278000" />
+      <workItem from="1611805961630" duration="8328000" />
+      <workItem from="1611826149232" duration="1712000" />
+      <workItem from="1611830912660" duration="8924000" />
+      <workItem from="1611884439569" duration="8413000" />
+      <workItem from="1611927999568" duration="601000" />
+      <workItem from="1611934883558" duration="5929000" />
+      <workItem from="1611996892063" duration="996000" />
     </task>
     <servers />
   </component>

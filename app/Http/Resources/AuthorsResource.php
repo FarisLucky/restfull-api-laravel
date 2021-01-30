@@ -10,6 +10,7 @@ class AuthorsResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
+     * Field pertama di resource ada "data".
      *
      * @param \Illuminate\Http\Request $request
      * @return array

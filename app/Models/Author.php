@@ -2,12 +2,16 @@
 
 namespace App\Models;
 
+use App\Models\Traits\HasDateTimeFormat;
+use Carbon\Carbon;
+use DateTimeInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
-class Author extends Model
+class Author extends AbstractApiModel
 {
-    use HasFactory;
+    use HasFactory, HasDateTimeFormat;
 
     protected $fillable = ['name'];
 
@@ -15,4 +19,10 @@ class Author extends Model
     {
         return $this->belongsToMany(Book::class);
     }
+
+    public function type(): string
+    {
+        return "authors";
+    }
+
 }

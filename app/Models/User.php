@@ -6,7 +6,10 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 use Laravel\Passport\HasApiTokens;
+use function Symfony\Component\String\s;
 
 class User extends Authenticatable
 {
@@ -41,4 +44,53 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $attributes = [
+        'role' => 'user'
+    ];
+
+    /**
+     * @var string
+     */
+    protected $keyType = 'string';
+
+    /**
+     * @var bool
+     */
+    public $incrementing = false;
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            $model->id = (string)Str::uuid();
+        });
+    }
+
+    /**
+     * @return string
+     */
+    public function type(): string
+    {
+        return 'users';
+    }
+
+    /**
+     * @return Collection
+     */
+    public function allowedAttributes(): Collection
+    {
+        return collect($this->attributes)->filter(function ($item, $key) {
+            return !collect($this->hidden)->contains($key) && $key !== "id";
+        })->merge([
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
+        ]);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

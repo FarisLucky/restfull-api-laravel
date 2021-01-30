@@ -4,33 +4,33 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateAuthorRequest;
 use App\Http\Requests\UpdateAuthorRequest;
-use App\Http\Resources\AuthorsCollection;
-use App\Http\Resources\AuthorsResource;
+use App\Http\Resources\JSONAPICollection;
+use App\Http\Resources\JSONAPIResource;
 use App\Models\Author;
-use Illuminate\Support\Facades\DB;
+use App\Services\JSONAPIService;
+use Illuminate\Http\JsonResponse;
 use Spatie\QueryBuilder\QueryBuilder;
 
 class AuthorController extends Controller
 {
+
+    private $service;
+
     /**
-     * Display Listing of Authors
-     * @return AuthorsCollection
+     * AuthorController constructor.
+     * @param JSONAPIService $service
      */
-    public function index()
+    public function __construct(JSONAPIService $service)
     {
-        $authors = QueryBuilder::for(Author::class)->allowedSorts(['name'])->get();
-//        $authors = DB::table('authors')->orderBy('name')->get();
-        return new AuthorsCollection($authors);
+        $this->service = $service;
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return JSONAPICollection
      */
-    public function create()
+    public function index()
     {
-        //
+        return $this->service->fetchResourcesIndex(Author::class, 'authors');
     }
 
     /**
@@ -39,58 +39,35 @@ class AuthorController extends Controller
      */
     public function store(CreateAuthorRequest $request)
     {
-        $author = Author::create($request->input("data.attributes"));
-        return (new AuthorsResource($author))
-            ->response()
-            ->setStatusCode(201)
-            ->header('Location',route('authors.show',[
-                'author' => $author
-            ]));
-
-
+        return $this->service->createResource(Author::class, $request->input('data.attributes'));
     }
 
     /**
-     * @param Author $author
-     * @return AuthorsResource
+     * @param int $author
+     * @return JSONAPIResource
      */
-    public function show(Author $author)
+    public function show(int $author)
     {
-        return new AuthorsResource($author);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Author  $author
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Author $author)
-    {
-        //
+        return $this->service->fetchResource(Author::class, $author, 'authors');
     }
 
     /**
      * @param UpdateAuthorRequest $request
      * @param Author $author
-     * @return AuthorsResource
+     * @return JSONAPIResource
      */
-    public function update(UpdateAuthorRequest $request, Author $author): AuthorsResource
+    public function update(UpdateAuthorRequest $request, Author $author)
     {
-        $author->update($request->input('data.attributes'));
-        return new AuthorsResource($author);
+        return $this->service->updateResource($author, $request->input('data.attributes'));
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Author  $author
-     * @return \Illuminate\Http\Response
+     * @param Author $author
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(Author $author)
     {
-        $author->delete();
-        return response()
-            ->json(null, 200);
+        return $this->service->deleteResource($author);
     }
 }

@@ -3,95 +3,65 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateBookRequest;
+use App\Http\Requests\JSONAPIRequest;
 use App\Http\Requests\UpdateBookRequest;
 use App\Http\Resources\BooksCollection;
 use App\Http\Resources\BooksResource;
+use App\Http\Resources\JSONAPICollection;
+use App\Http\Resources\JSONAPIResource;
 use App\Models\Book;
+use App\Services\JSONAPIService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Spatie\QueryBuilder\QueryBuilder;
 
 class BookController extends Controller
 {
+    private $service;
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response | BooksCollection
+     * BookController constructor.
+     * @param JSONAPIService $service
+     */
+    public function __construct(JSONAPIService $service)
+    {
+        $this->service = $service;
+    }
+
+    /**
+     * @return JSONAPICollection
      */
     public function index()
     {
-        $book = QueryBuilder::for(Book::class)->allowedSorts([
-            'title',
-            'publication_year',
-            'created_at',
-            'updated_at'
-        ])->get();
-        return new BooksCollection($book);
+        return $this->service->fetchResourcesIndex(Book::class, "books");
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store books with resource
-     *
-     * @param CreateBookRequest $request
+     * @param JSONAPIRequest $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(CreateBookRequest $request)
+    public function store(JSONAPIRequest $request)
     {
-        $book = Book::create([
-            'title' => $request->input('data.attributes.title'),
-            'description' => $request->input('data.attributes.description'),
-            'publication_year' => $request->input('data.attributes.publication_year'),
-        ]);
-
-        return (new BooksResource($book))
-            ->response()
-            ->header('Location', route(
-                'books.show',['book' => $book]
-            ));
+        return $this->service->createResource(Book::class, $request->input("data.attributes"));
     }
 
     /**
      * @param int $book
-     * @return BooksResource|int
+     * @return JSONAPIResource
      */
     public function show(int $book)
     {
-        $query = QueryBuilder::for(Book::where("id", $book))
-            ->allowedIncludes("authors")
-            ->firstOrFail();
-        return new BooksResource($query);
+        return $this->service->fetchResource(Book::class, $book, 'books');
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\Models\Book $book
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Book $book)
-    {
-        //
-    }
-
-    /**
-     * @param UpdateBookRequest $request
+     * @param JSONAPIRequest $request
      * @param Book $book
-     * @return BooksResource
+     * @return JSONAPIResource
      */
-    public function update(UpdateBookRequest $request, Book $book)
+    public function update(JSONAPIRequest $request, Book $book)
     {
-        $book->update($request->input('data.attributes'));
-        return new BooksResource($book);
+        return $this->service->updateResource($book, $request->input('data.attributes'));
     }
 
     /**
