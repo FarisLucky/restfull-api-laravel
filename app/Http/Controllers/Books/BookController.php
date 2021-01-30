@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Books;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateBookRequest;
 use App\Http\Requests\JSONAPIRequest;
 use App\Http\Requests\UpdateBookRequest;
@@ -11,12 +12,20 @@ use App\Http\Resources\JSONAPICollection;
 use App\Http\Resources\JSONAPIResource;
 use App\Models\Book;
 use App\Services\JSONAPIService;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Spatie\QueryBuilder\QueryBuilder;
 
 class BookController extends Controller
 {
+    /**
+     * @return string[]
+     */
+    protected function resourceMethodsWithoutModels()
+    {
+        return ['index', 'show', 'store'];
+    }
+    /**
+     * @var JSONAPIService
+     */
     private $service;
 
     /**
@@ -26,6 +35,7 @@ class BookController extends Controller
     public function __construct(JSONAPIService $service)
     {
         $this->service = $service;
+        $this->authorizeResource(Book::class, "book");
     }
 
     /**

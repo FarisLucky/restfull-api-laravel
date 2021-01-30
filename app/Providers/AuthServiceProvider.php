@@ -32,5 +32,9 @@ class AuthServiceProvider extends ServiceProvider
          * ini digunakan untuk oauth password credential
          */
         Passport::enableImplicitGrant();
+
+        Gate::define("admin-only", function ($user){
+            return $user->role === "admin";
+        });
     }
 }

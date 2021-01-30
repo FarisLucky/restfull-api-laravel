@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Books;
 
-use App\Http\Requests\BooksAuthorsRelationshipsRequest;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\JSONAPIRelationshipRequest;
 use App\Models\Book;
 use App\Services\JSONAPIService;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Support\Facades\Gate;
 
 class BooksAuthorsRelationshipsController extends Controller
 {
@@ -31,12 +33,16 @@ class BooksAuthorsRelationshipsController extends Controller
     }
 
     /**
-     * @param BooksAuthorsRelationshipsRequest $request
+     * @param JSONAPIRelationshipRequest $request
      * @param Book $book
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     * @throws AuthorizationException
      */
     public function update(JSONAPIRelationshipRequest $request, Book $book)
     {
+        if (Gate::denies('admin-only')) {
+            throw new AuthorizationException("Anda tidak memiliki akses ke aksi ini");
+        }
         return $this->service->updateManyToManyRelationships($book, 'authors', $request->input('data.*.id'));
     }
 }

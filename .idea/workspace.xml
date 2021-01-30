@@ -6,19 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="9e7898cf-7baf-4110-8639-19e189a9cffb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookAuthorsRelatedController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookAuthorsRelatedController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BooksAuthorsRelationshipsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BooksAuthorsRelationshipsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/AuthorsResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/AuthorsResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Author.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Author.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Authors/AuthorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookAuthorsRelatedController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Books/BookAuthorsRelatedController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Books/BookController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BooksAuthorsRelationshipsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Books/BooksAuthorsRelationshipsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BooksAuthorsRelationshipsRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CreateAuthorRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CreateBookRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateAuthorRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateBookRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/AuthorsCollection.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/AuthorsIdentifierResource.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/AuthorsResource.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/BooksCollection.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/BooksResource.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/AuthorSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/AuthorSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/BooksTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/BooksTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,6 +190,12 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Data Fariss\learn\PROJEK\restfull-api\app\Http\Controllers" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Data Fariss\learn\PROJEK\restfull-api\app\Http\Controllers\Users" />
+      <recent name="D:\Data Fariss\learn\PROJEK\restfull-api\app\Http\Controllers\Books" />
+      <recent name="D:\Data Fariss\learn\PROJEK\restfull-api\app\Http\Controllers\Comments" />
+      <recent name="D:\Data Fariss\learn\PROJEK\restfull-api\app\Http\Controllers\Authors" />
+    </key>
   </component>
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
@@ -310,8 +322,18 @@
       <workItem from="1611884439569" duration="8413000" />
       <workItem from="1611927999568" duration="601000" />
       <workItem from="1611934883558" duration="5929000" />
-      <workItem from="1611996892063" duration="996000" />
+      <workItem from="1611996892063" duration="1204000" />
+      <workItem from="1612000405963" duration="1684000" />
+      <workItem from="1612014324076" duration="1829000" />
     </task>
+    <task id="LOCAL-00001" summary="pemrosesan controller diubah ke service, dan request dijadikan satu, kemudian resource juga dijadikan satu">
+      <created>1611998235999</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1611998235999</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,5 +350,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="pemrosesan controller diubah ke service, dan request dijadikan satu, kemudian resource juga dijadikan satu" />
+    <option name="LAST_COMMIT_MESSAGE" value="pemrosesan controller diubah ke service, dan request dijadikan satu, kemudian resource juga dijadikan satu" />
   </component>
 </project>

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Books;
 
-use App\Http\Resources\AuthorsCollection;
+use App\Http\Controllers\Controller;
 use App\Http\Resources\JSONAPICollection;
 use App\Models\Book;
 use App\Services\JSONAPIService;

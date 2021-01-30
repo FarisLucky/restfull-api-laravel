@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\AuthorController;
-use App\Http\Controllers\AuthorsBooksController;
-use App\Http\Controllers\BookAuthorsRelatedController;
-use App\Http\Controllers\BookController;
-use App\Http\Controllers\BooksAuthorsRelationshipsController;
-use App\Http\Controllers\CommentsController;
-use App\Http\Controllers\UsersController;
+use App\Http\Controllers\Authors\AuthorController;
+use App\Http\Controllers\Authors\AuthorsBooksController;
+use App\Http\Controllers\Books\BookAuthorsRelatedController;
+use App\Http\Controllers\Books\BookController;
+use App\Http\Controllers\Books\BooksAuthorsRelationshipsController;
+use App\Http\Controllers\Comments\CommentsController;
+use App\Http\Controllers\Comments\CurrentAuthenticatedUserController;
+use App\Http\Controllers\Users\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,9 +60,7 @@ Route::middleware(['auth:api'])
          * -----------------
          */
         Route::apiResource('users',UsersController::class)->names('users');
-        Route::get("/users/current", function (\Illuminate\Http\Request $request) {
-            return $request->user();
-        });
+        Route::get("/users/current", [CurrentAuthenticatedUserController::class, "show"]);
         Route::get("users/{user}/relationships/comments", [BooksAuthorsRelationshipsController::class, "index"])
             ->name("users.relationships.comments");
         Route::match(["patch", "put"], "users/{user}/relationships/comments",

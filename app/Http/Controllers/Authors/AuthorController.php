@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Authors;
 
-use App\Http\Requests\CreateAuthorRequest;
-use App\Http\Requests\UpdateAuthorRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\JSONAPIRequest;
 use App\Http\Resources\JSONAPICollection;
 use App\Http\Resources\JSONAPIResource;
 use App\Models\Author;
 use App\Services\JSONAPIService;
 use Illuminate\Http\JsonResponse;
-use Spatie\QueryBuilder\QueryBuilder;
 
 class AuthorController extends Controller
 {
@@ -34,10 +33,10 @@ class AuthorController extends Controller
     }
 
     /**
-     * @param CreateAuthorRequest $request
-     * @return \Illuminate\Http\JsonResponse
+     * @param JSONAPIRequest $request
+     * @return JsonResponse
      */
-    public function store(CreateAuthorRequest $request)
+    public function store(JSONAPIRequest $request)
     {
         return $this->service->createResource(Author::class, $request->input('data.attributes'));
     }
@@ -52,11 +51,11 @@ class AuthorController extends Controller
     }
 
     /**
-     * @param UpdateAuthorRequest $request
+     * @param JSONAPIRequest $request
      * @param Author $author
      * @return JSONAPIResource
      */
-    public function update(UpdateAuthorRequest $request, Author $author)
+    public function update(JSONAPIRequest $request, Author $author)
     {
         return $this->service->updateResource($author, $request->input('data.attributes'));
     }
